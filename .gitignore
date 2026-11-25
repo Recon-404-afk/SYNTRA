@@ -1,0 +1,36 @@
+.venv/
+__pycache__/
+*.pyc
+data/*.db
+.env
+
+# Virtual environments
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Sensitive information
+.env
+.env.*
+*.pem
+*.key
+
+# Databases and network traffic
+data/
+*.db
+*.sqlite
+*.sqlite3
+*.log
+*.pcap
+*.pcapng
+eve.json
+
+# Editor settings
+.vscode/
+.idea/
+*.bak
+*.bak

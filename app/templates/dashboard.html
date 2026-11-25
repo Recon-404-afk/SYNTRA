@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SYNTRA | Security Console</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer></script>
+  <script src="/static/script.js" defer></script>
+</head>
+<body>
+  <header><div class="brand">SYNTRA<span>.</span><small>NETWORK INTRUSION DETECTION</small></div><div id="status">● Connecting...</div></header>
+  <main>
+    <div class="intro"><div><p class="eyebrow">SECURITY OPERATIONS</p><h1>Threat overview</h1><p>Suricata alerts stored by SYNTRA · updates every 5 seconds</p></div><span class="version">v0.3</span></div>
+    <section class="cards" aria-label="Alert statistics">
+      <article class="card"><label>Total alerts</label><strong id="total">—</strong></article>
+      <article class="card"><label>High priority</label><strong id="high">—</strong></article>
+      <article class="card"><label>Medium priority</label><strong id="medium">—</strong></article>
+      <article class="card"><label>Low priority</label><strong id="low">—</strong></article>
+    </section>
+    <section class="charts">
+      <article class="panel"><h2>Alert activity</h2><div class="chartbox"><canvas id="timelineChart"></canvas></div></article>
+      <article class="panel"><h2>Protocol distribution</h2><div class="chartbox"><canvas id="protocolChart"></canvas></div></article>
+    </section>
+    <section class="panel table-panel">
+      <div class="panel-head"><div><h2>Recent security alerts</h2><p>Latest 500 stored alerts · client-side filtering</p></div><span id="shown">0 shown</span></div>
+      <div class="filters"><input id="search" type="search" placeholder="Search IP, detection, protocol..." aria-label="Search alerts"><select id="protocolFilter" aria-label="Protocol filter"><option value="">All protocols</option></select><select id="severityFilter" aria-label="Severity filter"><option value="">All priorities</option><option value="1">High</option><option value="2">Medium</option><option value="3">Low</option></select></div>
+      <div class="scroll"><table><thead><tr><th>Time</th><th>Source</th><th>Destination</th><th>Protocol</th><th>Detection</th><th>Priority</th></tr></thead><tbody id="alertsBody"></tbody></table></div>
+    </section>
+    <footer>See the Traffic. Detect the Threat. · Detection alerts are indicators, not confirmed incidents.</footer>
+  </main>
+</body>
+</html>
